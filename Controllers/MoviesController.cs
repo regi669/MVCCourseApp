@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using MVCCourseApp.Models;
+using MVCCourseApp.ViewModels;
 
 namespace MVCCourseApp.Controllers
 {
@@ -8,7 +10,17 @@ namespace MVCCourseApp.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "CAT IN BOOTS" };
-            return View(movie);
+            var customers = new List<Customer>()
+            {
+                new Customer() { Name = "Jan"},
+                new Customer() { Name = "Ban"}
+            };
+            var viewModel = new RandomMovieViewModel()
+            {
+                Customers = customers,
+                Movie = movie
+            };
+            return View(viewModel);
         }
 
         public ActionResult Edit(int id)
