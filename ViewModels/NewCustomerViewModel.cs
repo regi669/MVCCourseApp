@@ -3,7 +3,7 @@ using MVCCourseApp.Models;
 
 namespace MVCCourseApp.ViewModels
 {
-    public class NewCustomerViewModel
+    public class CustomerFormViewModel
     {
         public IEnumerable<MembershipTypes> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
