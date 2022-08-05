@@ -1,0 +1,11 @@
+﻿@model MVCCourseApp.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul>
+@foreach (var customer in Model.Customers)
+{
+    <a href="Customers/Detail/@customer.Id"><li>@customer.Name</li></a>
+}
+</ul>
